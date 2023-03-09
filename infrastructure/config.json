@@ -1,0 +1,34 @@
+{
+  "invokerConfiguration": {
+    "invokerType": "apigateway-v2",
+    "type": "private",
+    "rootPath": "template-engine",
+    "paths": [
+      {
+        "path": "path-of-the-api",
+        "httpMethod": "POST"
+      }
+    ]
+  },
+  "lambdaConfiguration": {
+    "functionName": "mach-big-data-template-engine-lambda",
+    "lambdaRuntime": "python3.9",
+    "lambdaTimeout": 3,
+    "memorySize": 128
+  },
+  "monitoringConfiguration": {
+    "alarms": [
+      {
+        "comparisonOperator": "GREATER_THAN_THRESHOLD",
+        "durationMinutes": 5,
+        "evaluationPeriods": 1,
+        "statistic": "avg",
+        "threshold": 0.2,
+        "treatMissingData": "NOT_BREACHING",
+        "type": "errors"
+      }
+    ],
+    "channelId": "C0407PMN7CM",
+    "escalationPolicy": "Data-Delivery-EP"
+  }
+}
